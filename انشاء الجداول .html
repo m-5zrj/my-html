@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="ar">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>جدول الدروس اليومي</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            direction: rtl;
+
+            margin: 20px;
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+        }
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin-top: 20px;
+
+        }
+
+        th, td {
+
+            border: 1px solid #ccc;
+
+            padding: 10px;
+
+            text-align: center;
+
+        }
+
+        input[type="text"] {
+
+            width: 90%;
+
+            padding: 5px;
+
+        }
+
+        button {
+
+            margin-top: 10px;
+
+            padding: 10px;
+
+            font-size: 16px;
+
+        }
+
+        footer {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            font-size: 14px;
+
+            color: #555;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>جدول الدروس اليومي</h1>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>اليوم</th>
+
+            <th>الحصة 1</th>
+
+            <th>الحصة 2</th>
+
+            <th>الحصة 3</th>
+
+            <th>الحصة 4</th>
+
+            <th>الحصة 5</th>
+
+            <th>الحصة 6</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+
+            <td>الأحد</td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>الإثنين</td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>الثلاثاء</td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>الأربعاء</td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+        </tr>
+
+        <tr>
+
+            <td>الخميس</td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+            <td><input type="text" placeholder="اسم الدرس"></td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+<button onclick="saveSchedule()">حفظ الجدول</button>
+
+<script>
+
+    function saveSchedule() {
+
+        let schedule = {};
+
+        const rows = document.querySelectorAll("tbody tr");
+
+        rows.forEach((row) => {
+
+            const day = row.cells[0].innerText;
+
+            schedule[day] = [];
+
+            for (let i = 1; i < row.cells.length; i++) {
+
+                schedule[day].push(row.cells[i].querySelector('input').value);
+
+            }
+
+        });
+
+        console.log("جدول الحصص:", schedule);
+
+        alert("تم حفظ الجدول في وحدة التحكم.");
+
+    }
+
+</script>
+
+<footer>
+
+    تم انشاء هذا البرنامج بواسطة الطالب مؤمل عبدالرضا نعمة وهو مخصص لاعدادية الذاكرين
+
+</footer>
+
+</body>
+
+</html>
+
+
+		
+	
